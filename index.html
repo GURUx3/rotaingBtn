@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+      }
+      button {
+        padding: 100px 100px;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        font-size: 2.5em;
+        cursor: pointer;
+        position: relative;
+        top: 300px;
+        border: none;
+        border-radius: 100%;
+        transition: 1s;
+        font-family: Poppins;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+
+      button:hover {
+        border-radius: 1px;
+        color: white;
+        background-color: rgb(0, 255, 51);
+      }
+      /* No additional class needed in this example */
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="submit" id="myButton">spin</button>
+    <script>
+      let btn = document.getElementById("myButton");
+      let rotated = false;
+
+      btn.addEventListener("click", function () {
+        // Toggle rotation using the transform property
+        rotated = !rotated;
+        btn.style.transform = rotated ? "rotate(+3600deg)" : "rotate(-3600deg)";
+        btn.style.backgroundColor = rotated ? "teal" : "white";
+        btn.style.color = rotated ? "white" : "black";
+        btn.style.borderRadius = rotated ? "2px" : "100%";
+      });
+    </script>
+  </body>
+</html>
